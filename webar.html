@@ -1,0 +1,41 @@
+<!doctype HTML>
+<html>
+<script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
+  <body style='margin : 0px; overflow: hidden;'>
+    <a-scene embedded arjs>
+  	<a-marker preset="hiro">
+      <a-sphere position="0 1 0" radius="0.65" color="cyan" wireframe= "1">
+                     <a-animation attribute="rotation"
+                                  dur="5000"
+                                  fill="forwards"
+                                  to="180 360 0"
+                                  repeat="indefinite"></a-animation>
+                                  </a-sphere>
+      <a-torus-knot position="0 1 0" color="purple" arc="20" p="2" q="7" radius="0.3" radius-tubular="0.03">
+        <a-animation attribute="rotation"
+                     dur="10000"
+                     fill="forwards"
+                     to="360 360 360"
+                     repeat="indefinite">
+                   </a-animation>
+                     <!-- Using particle system component from Registry. -->
+                   </a-torus-knot>
+
+        <a-entity particle-system="preset: snow; particleCount: 10000">
+          <a-animation attribute="rotation"
+                      dur="10000"
+                      fill="forwards"
+                      to="360 360 360"
+                      repeat="indefinite"></a-animation>
+                      </a-entity>
+
+        <a-sky color="black">
+            </a-sky>
+
+
+  	</a-marker>
+  	<a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
